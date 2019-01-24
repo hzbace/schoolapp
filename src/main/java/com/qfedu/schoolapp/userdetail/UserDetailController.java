@@ -14,7 +14,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 @RestController
-@Api(value = "用户登录,用户退出，审核账号")
+@Api(value = "修改个人信息")
 public class UserDetailController {
 
     @Autowired

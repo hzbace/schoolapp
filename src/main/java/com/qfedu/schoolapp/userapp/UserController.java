@@ -38,4 +38,18 @@ public class UserController {
         return service.loginout(token);
     }
 
+    @GetMapping("updatePassword.do")
+    @CrossOrigin
+    @ApiOperation(value = "用户修改密码：需传入token，用户密码，用户新密码，用户确认的密码")
+    public ResultVo updatePassword(String userpassword, String newpassword, String token, String newpassword2){
+       return service.updatePassword(userpassword, newpassword, token, newpassword2);
+
+    }
+
+    @GetMapping("getUsernum.do")
+    @CrossOrigin
+    @ApiOperation(value = "通过token查询当前用户学号")
+    public ResultVo getUsernum(String token){
+        return service.getUsernum(token);
+    }
 }

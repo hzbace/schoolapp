@@ -7,9 +7,14 @@
     <!--2、注册中心-->
     <dubbo:registry protocol="zookeeper" address="zookeeper://39.105.189.141:2181"></dubbo:registry>
     <!--3、标记协议-->
-    <dubbo:protocol name="dubbo" port="20882"></dubbo:protocol>
+    <dubbo:protocol name="rmi" port="20882"></dubbo:protocol>
     <!--4、消费服务-->
     <dubbo:reference interface="com.qfedu.service.suser.ISUserService" id="userProvider" retries="0" check="false"></dubbo:reference>
     <dubbo:reference interface="com.qfedu.service.sudetail.ISUdetailService" id="userdetailprovider" retries="0" check="false"></dubbo:reference>
-
+    <dubbo:reference interface="com.qfedu.service.sschedule.ISScheduleService" retries="0" id="sscheduleprovider" check="false" ></dubbo:reference>
+    <dubbo:reference interface="com.qfedu.service.sblog.ISBlogService" retries="0" id="sblogprovider" check="false" ></dubbo:reference>
+    <dubbo:reference interface="com.qfedu.service.sblogcontent.ISBlogcontentService" retries="0" id="sblogcontentprovider" check="false"></dubbo:reference>
+    <dubbo:reference interface="com.qfedu.service.scomment.ISCommentService" retries="0" id="scommentprovider" check="false"></dubbo:reference>
+    <dubbo:reference interface="com.qfedu.service.sfriend.ISFriendService" retries="0" id="friendprovider" check="false"></dubbo:reference>
+    <dubbo:reference interface="com.qfedu.service.sgoods.ISGoodsService" retries="0" id="goodsprovider" check="false"></dubbo:reference>
 </beans>
